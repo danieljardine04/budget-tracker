@@ -50,8 +50,8 @@ function updateTransactions(){
         if(serverResponse.message){
           throw new Error(serverResponse);
         }
-        const transaction = db.transaction(['new_budget'], 'readwrite');
-        const budgetObjectStore = transaction.objectStore('new_budget');
+        const transaction = db.transaction(['new_transactions'], 'readwrite');
+        const budgetObjectStore = transaction.objectStore('new_transactions');
         budgetObjectStore.clear();
 
         alert('All transactions have been added');
